@@ -8,6 +8,7 @@ import Login from "@/components/Login";
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',  // history 模式 ， 默认为hash模式
   routes: [
     {
       path: '/login',
@@ -17,7 +18,10 @@ export default new Router({
     {
       path: '/index',
       name: 'AppIndex',
-      component:AppIndex
+      component:AppIndex,
+      meta: {
+        requireAuth: true
+      }
     }
   ]
 })
